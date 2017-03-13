@@ -1,0 +1,16 @@
+{{yield}}
+
+<div class="ui action input" {{action "onClick"}}>
+  <input type="text" disabled placeholder={{placeholder}}>
+  <button class="ui icon button">
+    <i class="upload icon"></i>
+  </button>
+</div>
+
+<div style="display: none">
+  {{x-file-input 
+      name="files"
+      alt="upload file"
+      action=(action "whenSelectFile")
+  }}
+</div>

@@ -1,0 +1,1 @@
+export { default } from 'ember-semantic-ui-file-uploader/components/file-input';
