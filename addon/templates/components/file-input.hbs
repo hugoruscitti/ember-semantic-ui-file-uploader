@@ -1,14 +1,34 @@
 {{yield}}
 
-<div class="ui action input" {{action "onClick"}}>
-  <input type="text" disabled placeholder={{placeholder}}>
-  <button class="ui icon button">
-    <i class="upload icon"></i>
-  </button>
-</div>
+{{#if loading}}
+  <div class="ui action input">
+    <input type="text" disabled placeholder={{progressText}}>
+    <button class="ui icon button">
+      <div class="ui mini active inline loader"></div>
+    </button>
+  </div>
+{{else if done}}
+  <div class="ui action input" {{action "onClick"}}>
+    <input type="text" disabled placeholder={{filename}}>
+    <button class="ui icon button">
+      <i class="upload icon"></i>
+    </button>
+  </div>
+{{else}}
+  <div class="ui action input" {{action "onClick"}}>
+    <input type="text" disabled placeholder={{placeholder}}>
+    <button class="ui icon button">
+      <i class="upload icon"></i>
+    </button>
+  </div>
+
+  {{#if error}}
+    <div class="ui error message">{{error}}</div>
+  {{/if}}
+{{/if}}
 
 <div style="display: none">
-  {{x-file-input 
+  {{x-file-input
       name="files"
       alt="upload file"
       action=(action "whenSelectFile")

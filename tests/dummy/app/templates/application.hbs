@@ -4,8 +4,13 @@
 
   <h1>Demo</h1>
 
-  <p>Value: {{value}}</p>
-
   {{file-input onUpload=(action "onUpload")}}
 
+{{#if fileData}}
+<pre>name: {{fileData.name}}
+size: {{fileData.size}}
+result: {{base64Content}}
+type: {{fileData.type}}
+</pre>
+{{/if}}
 </div>
