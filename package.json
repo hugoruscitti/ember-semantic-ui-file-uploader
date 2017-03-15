@@ -11,7 +11,7 @@
     "doc": "doc",
     "test": "tests"
   },
-  "repository": "",
+  "repository": "https://github.com/hugoruscitti/ember-semantic-ui-file-uploader",
   "scripts": {
     "build": "ember build",
     "start": "ember server",
@@ -33,6 +33,7 @@
     "ember-cli-qunit": "^3.0.1",
     "ember-cli-release": "^0.2.9",
     "ember-cli-sri": "^2.1.0",
+    "ember-cli-surge": "1.1.17",
     "ember-cli-test-loader": "^1.1.0",
     "ember-cli-uglify": "^1.2.0",
     "ember-data": "^2.10.0",
@@ -47,6 +48,7 @@
     "node": ">= 0.12.0"
   },
   "ember-addon": {
-    "configPath": "tests/dummy/config"
+    "configPath": "tests/dummy/config",
+    "demoURL": "http://ember-semantic-ui-file-uploader.surge.sh/"
   }
 }
