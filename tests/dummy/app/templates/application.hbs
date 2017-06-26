@@ -4,7 +4,7 @@
 
   <h1>Demo</h1>
 
-  {{file-input onUpload=(action "onUpload")}}
+  {{file-input onUpload=(action "onUpload") extraArgumentForUpload='example'}}
 
   {{#if fileData}}
     <pre>name: {{fileData.name}}
@@ -18,7 +18,7 @@ type: {{fileData.type}}
 
 <p>Template:</p>
 
-<pre>\{{file-input onUpload=(action "onUpload")}}
+<pre>\{{file-input onUpload=(action "onUpload") extraArgumentForUpload='example'}}
 
 \{{#if fileData}}
   name: \{{fileData.name}}
@@ -32,9 +32,11 @@ type: {{fileData.type}}
 <p>Controller or coponent</p>
 
 <pre>actions: {
-    onUpload(fileData) {
+    onUpload(fileData, extraArgumentForUpload) {
 
       console.log("called onUpload, filedata is", fileData);
+      console.log('extraArg', extraArgumentForUpload);
+
       // note: fileData.result is the base64 string.
 
       this.set('fileData', fileData);

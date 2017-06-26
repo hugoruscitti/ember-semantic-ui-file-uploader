@@ -6,8 +6,9 @@ export default Ember.Controller.extend({
   }),
 
   actions: {
-    onUpload(fileData) {
+    onUpload(fileData, extraArgumentForUpload) {
       console.log("called onUpload, filedata is", fileData);
+      console.log("ExtraArg", extraArgumentForUpload);
       this.set('fileData', fileData);
     }
   }

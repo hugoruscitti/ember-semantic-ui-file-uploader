@@ -12,6 +12,7 @@ export default Ember.Component.extend({
   error: null,
   fakeDelay: 500,
   allowedFileType: 'image/*',
+  extraArgumentForUpload: null,
 
   progressText: Ember.computed('progress', function() {
     return `${this.get('uploadingText')} ${this.get('progress')} %`;
@@ -56,7 +57,7 @@ export default Ember.Component.extend({
               size: fileList[0].size,
               type: fileList[0].type,
               result: reader.result
-            });
+            }, this.get('extraArgumentForUpload'));
 
             this.set('filename', fileList[0].name);
           }, this.get('fakeDelay'));
