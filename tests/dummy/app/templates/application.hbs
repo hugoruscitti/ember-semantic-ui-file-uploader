@@ -6,17 +6,47 @@
 
   {{file-input onUpload=(action "onUpload")}}
 
-{{#if fileData}}
-  <pre>name: {{fileData.name}}
-  size: {{fileData.size}}
-  result: {{base64Content}}
-  type: {{fileData.type}}
-  </pre>
-{{/if}}
+  {{#if fileData}}
+    <pre>name: {{fileData.name}}
+size: {{fileData.size}}
+result: {{base64Content}}
+type: {{fileData.type}}
+</pre>
+  {{/if}}
+
+<hr>
+
+<p>Template:</p>
+
+<pre>\{{file-input onUpload=(action "onUpload")}}
+
+\{{#if fileData}}
+  name: \{{fileData.name}}
+  size: \{{fileData.size}}
+  result: \{{base64Content}}
+  type: \{{fileData.type}}
+\{{/if}}
+</pre>
+
+
+<p>Controller or coponent</p>
+
+<pre>actions: {
+    onUpload(fileData) {
+
+      console.log("called onUpload, filedata is", fileData);
+      // note: fileData.result is the base64 string.
+
+      this.set('fileData', fileData);
+    }
+  }
+</pre>
+
+<hr>
 
 <p>
   <br/>
-  <a href="https://github.com/hugoruscitti/ember-adjustable-number">github repo</a>
+  <a href="https://github.com/hugoruscitti/ember-semantic-ui-file-uploader">github repo</a>
 </p>
 
 </div>

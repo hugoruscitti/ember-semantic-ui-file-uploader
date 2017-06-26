@@ -1,4 +1,9 @@
-
 .main {
   padding: 2em;
+}
+
+pre {
+  border: 1px solid #ccc;
+  background: white;
+  padding: 10px;
 }
